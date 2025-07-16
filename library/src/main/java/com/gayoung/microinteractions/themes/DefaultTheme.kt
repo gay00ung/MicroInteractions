@@ -1,7 +1,7 @@
-package com.microinteractions.themes
+package com.gayoung.microinteractions.themes
 
 import androidx.compose.ui.graphics.Color
-import com.microinteractions.core.*
+import com.gayoung.microinteractions.core.*
 
 class DefaultTheme : MicroInteractionTheme {
     override val tapFeedback = FeedbackType.combined(

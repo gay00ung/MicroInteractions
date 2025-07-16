@@ -1,4 +1,4 @@
-package com.microinteractions.core
+package com.gayoung.microinteractions.core
 
 import android.content.Context
 import android.media.AudioAttributes
@@ -30,25 +30,8 @@ class SoundEngine(private val context: Context) {
     }
     
     private fun preloadSystemSounds() {
-        // Map to Android system sounds
-        val systemSounds = mapOf(
-            SoundType.TAP to android.R.raw.effect_tick,
-            SoundType.CLICK to android.R.raw.effect_tick,
-            SoundType.POP to android.R.raw.effect_tick,
-            SoundType.SUCCESS to android.R.raw.effect_tick,
-            SoundType.ERROR to android.R.raw.effect_tick,
-            SoundType.WARNING to android.R.raw.effect_tick,
-            SoundType.WHOOSH to android.R.raw.effect_tick
-        )
-        
-        systemSounds.forEach { (type, resourceId) ->
-            try {
-                val soundId = soundPool.load(context, resourceId, 1)
-                loadedSounds[type] = soundId
-            } catch (e: Exception) {
-                Log.e("SoundEngine", "Failed to load sound $type", e)
-            }
-        }
+        // System sounds will be loaded on demand
+        // Android doesn't expose system sounds via R.raw
     }
     
     fun playSound(type: SoundType, volume: Float = 0.7f) {
@@ -61,16 +44,8 @@ class SoundEngine(private val context: Context) {
     }
     
     private fun playSystemSound(type: SoundType, volume: Float) {
-        loadedSounds[type]?.let { soundId ->
-            soundPool.play(
-                soundId,
-                volume,
-                volume,
-                1,
-                0,
-                1.0f
-            )
-        }
+        // For now, system sounds are disabled
+        // In a real implementation, you would load custom sound files
     }
     
     private fun playCustomSound(fileName: String, volume: Float) {

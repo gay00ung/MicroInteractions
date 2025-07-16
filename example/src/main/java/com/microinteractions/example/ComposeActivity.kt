@@ -7,17 +7,19 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.microinteractions.MicroInteractions
-import com.microinteractions.core.MicroInteraction
+import com.gayoung.microinteractions.MicroInteractions
+import com.gayoung.microinteractions.core.MicroInteraction
 import com.microinteractions.example.ui.theme.MicroInteractionsTheme
-import com.microinteractions.extensions.*
-import com.microinteractions.themes.DefaultTheme
-import com.microinteractions.themes.EnergeticTheme
-import com.microinteractions.themes.SubtleTheme
+import com.gayoung.microinteractions.extensions.*
+import com.gayoung.microinteractions.themes.DefaultTheme
+import com.gayoung.microinteractions.themes.EnergeticTheme
+import com.gayoung.microinteractions.themes.SubtleTheme
 
 class ComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -177,10 +179,12 @@ fun ComposeExamplesScreen() {
                         interaction = MicroInteraction.Success,
                         trigger = showSuccess
                     ) {
-                        LaunchedEffect(showSuccess) {
-                            if (showSuccess) {
-                                showSuccess = false
-                            }
+                        // Empty content
+                    }
+                    
+                    LaunchedEffect(showSuccess) {
+                        if (showSuccess) {
+                            showSuccess = false
                         }
                     }
                     
@@ -189,10 +193,12 @@ fun ComposeExamplesScreen() {
                         interaction = MicroInteraction.Failure,
                         trigger = showFailure
                     ) {
-                        LaunchedEffect(showFailure) {
-                            if (showFailure) {
-                                showFailure = false
-                            }
+                        // Empty content
+                    }
+                    
+                    LaunchedEffect(showFailure) {
+                        if (showFailure) {
+                            showFailure = false
                         }
                     }
                 }
@@ -327,6 +333,3 @@ fun ComposeExamplesScreen() {
     }
 }
 
-// Missing imports
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*

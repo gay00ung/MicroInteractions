@@ -1,7 +1,7 @@
-package com.microinteractions.themes
+package com.gayoung.microinteractions.themes
 
 import androidx.compose.ui.graphics.Color
-import com.microinteractions.core.FeedbackType
+import com.gayoung.microinteractions.core.FeedbackType
 
 interface MicroInteractionTheme {
     val tapFeedback: FeedbackType

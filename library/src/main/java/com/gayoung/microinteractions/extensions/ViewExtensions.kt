@@ -1,10 +1,10 @@
-package com.microinteractions.extensions
+package com.gayoung.microinteractions.extensions
 
 import android.view.View
 import android.widget.*
-import com.microinteractions.MicroInteractions
-import com.microinteractions.core.MicroInteraction
-import com.microinteractions.core.MicroInteractionBuilder
+import com.gayoung.microinteractions.MicroInteractions
+import com.gayoung.microinteractions.core.MicroInteraction
+import com.gayoung.microinteractions.core.MicroInteractionBuilder
 
 fun View.addMicroInteraction(
     interaction: MicroInteraction,
@@ -108,7 +108,7 @@ fun EditText.addEditingInteraction() {
     }
 }
 
-fun SwipeRefreshLayout.addRefreshInteraction() {
+fun androidx.swiperefreshlayout.widget.SwipeRefreshLayout.addRefreshInteraction() {
     setOnRefreshListener {
         (getChildAt(0) as? View)?.triggerMicroInteraction(MicroInteraction.Refresh)
     }
