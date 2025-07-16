@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.card.MaterialCardView
-import com.microinteractions.MicroInteractions
-import com.microinteractions.core.MicroInteraction
-import com.microinteractions.extensions.*
-import com.microinteractions.themes.DefaultTheme
-import com.microinteractions.themes.EnergeticTheme
-import com.microinteractions.themes.SubtleTheme
+import com.gayoung.microinteractions.MicroInteractions
+import com.gayoung.microinteractions.core.MicroInteraction
+import com.gayoung.microinteractions.extensions.*
+import com.gayoung.microinteractions.themes.DefaultTheme
+import com.gayoung.microinteractions.themes.EnergeticTheme
+import com.gayoung.microinteractions.themes.SubtleTheme
 
 class XmlActivity : AppCompatActivity() {
     

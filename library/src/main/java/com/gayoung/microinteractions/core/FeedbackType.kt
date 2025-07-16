@@ -1,4 +1,4 @@
-package com.microinteractions.core
+package com.gayoung.microinteractions.core
 
 sealed class FeedbackType {
     data class Haptic(val type: HapticType) : FeedbackType()

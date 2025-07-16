@@ -1,7 +1,7 @@
 package com.microinteractions.example
 
 import android.app.Application
-import com.microinteractions.MicroInteractions
+import com.gayoung.microinteractions.MicroInteractions
 
 class ExampleApplication : Application() {
     override fun onCreate() {
@@ -16,7 +16,7 @@ class ExampleApplication : Application() {
             isSoundEnabled = true
             isAnimationEnabled = true
             defaultIntensity = 0.7f
-            debugMode = BuildConfig.DEBUG
+            debugMode = true // BuildConfig not generated yet
         }
         
         // Set up analytics handler (optional)

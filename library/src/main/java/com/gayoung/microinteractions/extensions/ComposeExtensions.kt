@@ -1,4 +1,4 @@
-package com.microinteractions.extensions
+package com.gayoung.microinteractions.extensions
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.clickable
@@ -13,8 +13,8 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
-import com.microinteractions.MicroInteractions
-import com.microinteractions.core.*
+import com.gayoung.microinteractions.MicroInteractions
+import com.gayoung.microinteractions.core.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -47,15 +47,15 @@ fun Modifier.microInteraction(
     val coroutineScope = rememberCoroutineScope()
     var isAnimating by remember { mutableStateOf(false) }
     
-    val animationSpec = remember(interaction) {
+    val animationSpec: AnimationSpec<Float> = remember(interaction) {
         when (interaction) {
-            is MicroInteraction.Bounce -> spring(
+            is MicroInteraction.Tap -> spring(
                 dampingRatio = Spring.DampingRatioMediumBouncy,
-                stiffness = Spring.StiffnessLow
+                stiffness = Spring.StiffnessMedium
             )
-            is MicroInteraction.Elastic -> spring(
+            is MicroInteraction.Success -> spring(
                 dampingRatio = Spring.DampingRatioLowBouncy,
-                stiffness = Spring.StiffnessVeryLow
+                stiffness = Spring.StiffnessLow
             )
             else -> tween(300)
         }
@@ -68,7 +68,7 @@ fun Modifier.microInteraction(
     )
     
     val rotation by animateFloatAsState(
-        targetValue = if (isAnimating && interaction is MicroInteraction.Rotate) 360f else 0f,
+        targetValue = if (isAnimating && interaction is MicroInteraction.Refresh) 360f else 0f,
         animationSpec = tween(300)
     )
     
@@ -114,7 +114,7 @@ fun Modifier.microInteraction(
         .scale(scale)
         .rotate(rotation)
         .graphicsLayer {
-            if (isAnimating && interaction is MicroInteraction.Shake) {
+            if (isAnimating && interaction is MicroInteraction.Failure) {
                 translationX = ((-10..10).random()).toFloat()
             }
         }

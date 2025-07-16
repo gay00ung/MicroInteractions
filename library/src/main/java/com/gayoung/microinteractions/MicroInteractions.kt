@@ -1,12 +1,12 @@
-package com.microinteractions
+package com.gayoung.microinteractions
 
 import android.content.Context
 import android.util.Log
-import com.microinteractions.core.*
-import com.microinteractions.themes.DefaultTheme
-import com.microinteractions.themes.EnergeticTheme
-import com.microinteractions.themes.MicroInteractionTheme
-import com.microinteractions.themes.SubtleTheme
+import com.gayoung.microinteractions.core.*
+import com.gayoung.microinteractions.themes.DefaultTheme
+import com.gayoung.microinteractions.themes.EnergeticTheme
+import com.gayoung.microinteractions.themes.MicroInteractionTheme
+import com.gayoung.microinteractions.themes.SubtleTheme
 
 object MicroInteractions {
     

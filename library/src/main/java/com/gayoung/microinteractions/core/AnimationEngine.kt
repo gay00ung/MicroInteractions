@@ -1,4 +1,4 @@
-package com.microinteractions.core
+package com.gayoung.microinteractions.core
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter

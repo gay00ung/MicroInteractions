@@ -1,7 +1,7 @@
-package com.microinteractions.core
+package com.gayoung.microinteractions.core
 
 import android.view.View
-import com.microinteractions.themes.MicroInteractionTheme
+import com.gayoung.microinteractions.themes.MicroInteractionTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -82,9 +82,9 @@ sealed class MicroInteraction(
     
     // Custom interaction
     data class Custom(
-        override val name: String,
+        val customName: String,
         override val feedback: FeedbackType
-    ) : MicroInteraction(name, feedback)
+    ) : MicroInteraction(customName, feedback)
 }
 
 class MicroInteractionBuilder(

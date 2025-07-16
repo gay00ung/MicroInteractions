@@ -1,4 +1,4 @@
-package com.microinteractions.core
+package com.gayoung.microinteractions.core
 
 import android.content.Context
 import android.os.Build
