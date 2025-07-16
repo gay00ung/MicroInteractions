@@ -21,26 +21,31 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     
-    - name: Build Release AAR
-      run: ./gradlew :library:assembleRelease
+    - name: Build AAR files
+      run: |
+        ./gradlew :library:assembleRelease
+        ./gradlew :library:assembleDebug
     
     - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
-    
-    - name: Upload Release AAR
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./library/build/outputs/aar/library-release.aar
-        asset_name: MicroInteractions-${{ github.ref_name }}.aar
-        asset_content_type: application/java-archive
+        files: |
+          ./library/build/outputs/aar/library-release.aar
+          ./library/build/outputs/aar/library-debug.aar
+        token: ${{ secrets.GITHUB_TOKEN }}
+        body: |
+          ## MicroInteractions ${{ github.ref_name }}
+          
+          ### Installation
+          ```gradle
+          dependencies {
+              implementation("com.github.gay00ung:MicroInteractions:${{ github.ref_name }}")
+          }
+          ```
+          
+          ### Assets
+          - `library-release.aar` - Release build
+          - `library-debug.aar` - Debug build with debugging symbols
