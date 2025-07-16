@@ -5,6 +5,7 @@ A delightful Android library for adding micro-interactions to your apps with hap
 [![Android](https://img.shields.io/badge/Android-21%2B-green.svg)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.20-blue.svg)](https://kotlinlang.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![](https://jitpack.io/v/gay00ung/MicroInteractions.svg)](https://jitpack.io/#gay00ung/MicroInteractions)
 
 ## Features
 
@@ -27,18 +28,20 @@ Add the dependency to your module's `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("com.github.microinteractions:microinteractions:1.0.0")
+    implementation ("com.github.gay00ung:MicroInteractions:v1.0.0")
 }
 ```
 
 ### Maven
 
-```xml
-<dependency>
-    <groupId>com.github.microinteractions</groupId>
-    <artifactId>microinteractions</artifactId>
-    <version>1.0.0</version>
-</dependency>
+```kotlin
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url 'https://jitpack.io' }
+		}
+}
 ```
 
 ## Quick Start
