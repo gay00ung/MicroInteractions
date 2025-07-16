@@ -76,7 +76,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.gay00ung"
             artifactId = "MicroInteractions"
-            version = "1.0.0"
+            version = "1.0.1"
 
             afterEvaluate {
                 from(components["release"])
