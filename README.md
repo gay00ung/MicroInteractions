@@ -28,7 +28,7 @@ Add the dependency to your module's `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation ("com.github.gay00ung:MicroInteractions:v1.0.1")
+    implementation ("com.github.gay00ung:MicroInteractions:v1.0.2")
 }
 ```
 
